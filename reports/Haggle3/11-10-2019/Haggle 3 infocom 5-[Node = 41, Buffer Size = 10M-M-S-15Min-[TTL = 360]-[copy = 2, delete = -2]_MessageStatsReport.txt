@@ -1,0 +1,20 @@
+Message stats for scenario Haggle 3 infocom 5-[Node = 41, Buffer Size = 10M-M-S-15Min-[TTL = 360]-[copy = 2, delete = -2]
+sim_time: 274883.0000
+created: 211
+started: 3174
+relayed: 1622
+aborted: 1552
+dropped: 181
+removed: 1652
+delivered: 37
+delivery_prob: 0.1754
+response_prob: 0.0000
+overhead_ratio: 42.8378
+latency_avg: 6699.0270
+latency_med: 5489.0000
+hopcount_avg: 2.5405
+hopcount_med: 2
+buffertime_avg: 3353.0262
+buffertime_med: 1067.0000
+rtt_avg: NaN
+rtt_med: NaN

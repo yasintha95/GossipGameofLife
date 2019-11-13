@@ -1,0 +1,20 @@
+Message stats for scenario epidemic.EpidemicRouter-100, 100-1-1160, 1240-[TTL = 360]-[Node = 41, Buffer Size = 10M]-M-S-15Min
+sim_time: 274883.0000
+created: 211
+started: 5993
+relayed: 4042
+aborted: 1951
+dropped: 4253
+removed: 0
+delivered: 107
+delivery_prob: 0.5071
+response_prob: 0.0000
+overhead_ratio: 36.7757
+latency_avg: 7575.8224
+latency_med: 6910.0000
+hopcount_avg: 4.2523
+hopcount_med: 4
+buffertime_avg: 14711.3736
+buffertime_med: 16638.0000
+rtt_avg: NaN
+rtt_med: NaN

@@ -1,0 +1,74 @@
+## Scenario settings
+
+#Scenario.name = %%DecisionEngineRouter.decisionEngine%%-%%MovementModel.worldSize%%-%%Events1.interval%%-[TTL = %%Group.msgTtl%%]-%%MovementModel.rngSeed%%-[Node = %%Group.nrofHosts%%, Buffer Size = %%Group.bufferSize%%]-M-S-15Min
+Scenario.name = %%DecisionEngineRouter.decisionEngine%%-%%MovementModel.worldSize%%-%%Events1.interval%%-[copy = %%DecisionEngineRouter.copyThreshold%%]-[delete = %%DecisionEngineRouter.dropThreshold%%]-[TTL = %%Group.msgTtl%%]-%%MovementModel.rngSeed%%-[Node = %%Group.nrofHosts%%, Buffer Size = %%Group.bufferSize%%]-M-S-15Min
+#Scenario.name = epidemic - %%MovementModel.rngSeed%%-[Node = %%Group.nrofHosts%%, Buffer Size = %%Group.bufferSize%%]-[TTL = %%Group.msgTtl%%]
+Scenario.simulateConnections = true
+Scenario.updateInterval = 0.1
+Scenario.endTime = 86400                                                                                                  
+#86400
+#3% 83808
+#4% 82944
+#5% 82080
+
+btInterface.type = SimpleBroadcastInterface
+btInterface.transmitSpeed = 250k
+btInterface.transmitRange = 10
+
+Scenario.nrofHostGroups = 1
+Group.movementModel = RandomWalk
+#Group.movementModel = RandomWaypoint
+Group.router = DecisionEngineRouter
+#DecisionEngineRouter.decisionEngine = epidemic.EpidemicRouter
+DecisionEngineRouter.decisionEngine = epidemic.EpidemicGameOfLifeFIX
+DecisionEngineRouter.copyThreshold = 3                                                               
+DecisionEngineRouter.dropThreshold = -3
+
+
+Group.bufferSize = 10M
+Group.waitTime = 10, 30
+Group.nrofInterfaces = 1
+Group.interface1 = btInterface
+#Group.speed = 0.5, 1.5
+#Group.speed = 0.8, 1.4
+Group.speed = 2.5, 4.5
+Group.msgTtl = 720
+
+Group.nrofHosts = 100
+Group1.groupID = p
+
+Events.nrof = 1
+Events1.class = MessageEventGenerator
+Events1.interval =  290, 310
+# 25,30 (~120 texts/hour)
+# 290, 310 (~12 texts/hour)
+# 350, 400 (~9 texts/hour)
+# 580, 620 (~ 6 texts/hour)
+# 1160, 1240 (~ 3 texts/ hour)
+# 2320, 2480 (~ 1 texts/ hour)
+Events1.size = 50k,100k
+#Events1.size = 100k, 250k
+Events1.time = 0,70000
+Events1.hosts = 0,99                                                  
+Events1.prefix = M
+
+
+#MovementModel.rngSeed = [1;1;1;1;1;99;99;99;99;99;344;344;344;344;344;986;986;986;986;986;631;631;631;631;631]
+#MovementModel.rngSeed = [1;99;344;986;631]
+MovementModel.rngSeed = 1
+MovementModel.worldSize = 3000, 3000
+MovementModel.warmup = 1
+
+Report.nrofReports = 1
+Report.warmup = 0
+Report.reportDir = reports/EpidemicRandom/07-07-2019
+Report.report1 = MessageStatsReport1
+#Report.report1 = MessageDeliveredPerContactReport
+#Report.report2 = OverheadPerContactReport
+#Report.report3 = LatencyPerContactReport
+#Report.report4 = PercentageMessageDeliveredPerContactReport
+
+
+Optimization.cellSizeMult = 5
+Optimization.randomizeUpdateOrder = true
+

@@ -1,0 +1,20 @@
+Message stats for scenario RandomWaypointUnicast-1000, 1000-1160, 1240-[copy = 3]-[delete = -4]-[TTL = 360]-1-[Node = 100, Buffer Size = 10M]-M-S-15Min
+sim_time: 274883.0000
+created: 211
+started: 14020
+relayed: 13974
+aborted: 46
+dropped: 6752
+removed: 7433
+delivered: 147
+delivery_prob: 0.6967
+response_prob: 0.0000
+overhead_ratio: 94.0612
+latency_avg: 11274.6211
+latency_med: 10691.9000
+hopcount_avg: 3.4966
+hopcount_med: 3
+buffertime_avg: 8507.6653
+buffertime_med: 8203.7000
+rtt_avg: NaN
+rtt_med: NaN
